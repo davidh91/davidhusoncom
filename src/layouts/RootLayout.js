@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const RootLayout = () => {
   return (
-    <div className="container h-screen mx-auto pt-16">
+    <div className="container mx-auto pt-16">
       <div className="text-center lg:text-start lg:flex h-full">
         <header>
           <div class="pb-8">
@@ -12,19 +12,19 @@ const RootLayout = () => {
           </div>
           <nav>
             <ul className="flex justify-center lg:text-start lg:block gap-8">
-              <li>
+              <li className="hover:text-gray-500">
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-500">
                 <Link to="/works">Works</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-500">
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
         </header>
-        <main className="mr-auto block width-1/2 lg:w-3/4 lg:flex items-center lg:justify-center">
+        <main className="mr-auto block mt-32 lg:mt-44 width-1/2 lg:w-3/4 lg:flex items-center lg:justify-center">
           <Outlet />
         </main>
       </div>
