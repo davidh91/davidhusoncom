@@ -2,11 +2,11 @@ import React from "react";
 
 const Card = ({ item }) => {
   return (
-    <div className="p-12 mb-44 lg:mb-64 w-full flex gap-12 justify-between">
-      <div className="w-1/2">
+    <div className="p-12 px-24 mb-44 lg:mb-64 w-full flex flex-col gap-2 justify-center snap-start">
+      <div className="w-full mx-auto pb-[2.625rem]">
         <img className="lg:max-w-xs" src={item.image} alt="" />
       </div>
-      <div className="text-start w-1/2">
+      <div className="text-start w-full">
         <p className="font-medium">{item.title}</p>
         <p className="font-light">{item.text}</p>
         <p className="font-light hover:text-gray-500 italic">

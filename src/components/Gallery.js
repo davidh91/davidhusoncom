@@ -6,7 +6,22 @@ const Gallery = ({ galleryData }) => {
     return <Card key={i} item={item} />;
   });
 
-  return <div>{data}</div>;
+  return (
+    <div className="relative">
+      <div>
+        <div className="sticky top-[2.625rem] float-right">Music</div>
+        <div>{data}</div>
+      </div>
+      <div>
+        <div className="sticky top-[2.625rem] float-right">Film</div>
+        <div>{data}</div>
+      </div>
+      <div>
+        <div className="sticky top-[2.625rem] float-right">Other</div>
+        <div>{data}</div>
+      </div>
+    </div>
+  );
 };
 
 export default Gallery;

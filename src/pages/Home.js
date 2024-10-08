@@ -3,9 +3,11 @@ import davidphoto from "../assets/images/david.jpg";
 
 const Home = () => {
   return (
-    <div className="mt-8 lg:mt-0 lg:max-w-sm lg:mb-32 ">
-      <img className="mx-auto lg:m-0" src={davidphoto} alt="David Huson" />
-    </div>
+    <img
+      className="mt-32 lg:mt-[15vh] md:max-w-[70%] lg:max-w-[50%] mx-auto"
+      src={davidphoto}
+      alt="David Huson"
+    />
   );
 };
 

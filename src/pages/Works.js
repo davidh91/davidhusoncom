@@ -27,13 +27,23 @@ const Works = () => {
       media: "music",
       link: "https://open.spotify.com/album/6lgLW1Kg42WEnpBcBcxrDe?si=BTNf9QIhSD2C4sWni8XA_w",
     },
+    {
+      title: "Como el Viento (2022)",
+      text: "Flamenco drill project feat. Antonio Moreno Glazkov",
+      image: elviento_cover,
+      media: "music",
+      link: "https://open.spotify.com/album/6lgLW1Kg42WEnpBcBcxrDe?si=BTNf9QIhSD2C4sWni8XA_w",
+    },
+    {
+      title: "Como el Viento (2022)",
+      text: "Flamenco drill project feat. Antonio Moreno Glazkov",
+      image: elviento_cover,
+      media: "music",
+      link: "https://open.spotify.com/album/6lgLW1Kg42WEnpBcBcxrDe?si=BTNf9QIhSD2C4sWni8XA_w",
+    },
   ];
 
-  return (
-    <div className="w-full">
-      <Gallery galleryData={galleryData} />
-    </div>
-  );
+  return <Gallery galleryData={galleryData} />;
 };
 
 export default Works;
