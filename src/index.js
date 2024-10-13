@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -9,6 +9,9 @@ import Works from "./pages/Works";
 import Contact from "./pages/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+export const WorkContext = createContext();
+export const TriggerContext = createContext();
 
 root.render(
   <React.StrictMode>

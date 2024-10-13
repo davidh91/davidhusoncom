@@ -1,27 +1,35 @@
-import React, { useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { Link, useLocation, useOutletContext } from "react-router-dom";
+import { WorkContext } from "..";
+
 const Navbar = () => {
   const [selectedWork, setSelectedWork] = useState("");
   const location = useLocation();
-  const navStyle = useRef();
-  console.log("sdsd", location.pathname);
+  const [navStyle, setNavStyle] = useState("translate-y-0");
+
+  const [workItem, setWorkItem] = useContext(WorkContext);
 
   const handelClick = (item) => {
-    if (item === "music") {
-      navStyle.current = "translate-y-0";
-    } else if (item === "film") {
-      navStyle.current = "-translate-y-6";
-    } else if (item === "other") {
-      navStyle.current = "-translate-y-12";
-    }
+    setWorkItem(item);
 
-    setSelectedWork(item);
-    console.log(selectedWork);
     const element = document.getElementById(item);
     if (element !== null) {
       element.scrollIntoView(true, { smooth: true });
     }
   };
+
+  useEffect(() => {
+    if (workItem === "music") {
+      console.log("trans to music");
+      setNavStyle("translate-y-0");
+    } else if (workItem === "film") {
+      setNavStyle("-translate-y-6");
+      console.log("trans to film");
+    } else if (workItem === "other") {
+      setNavStyle("-translate-y-12");
+      console.log("trans to other");
+    }
+  }, [workItem]);
 
   return (
     <nav>
@@ -37,7 +45,7 @@ const Navbar = () => {
             <div className="transition-all">
               <span className="absolute top-[10px] bg-red-700 ml-20 w-[20px] h-0.5 rounded-md tra" />
               <ul
-                className={`${navStyle.current} ml-3 absolute left-24 top-0 transition duration-300`}
+                className={`${navStyle} ml-3 absolute left-24 top-0 transition duration-300`}
               >
                 <li
                   onClick={() => handelClick("music")}
