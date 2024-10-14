@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  height: 100%;
+}
+html, 
 body {
   background-color: #EAEAEA;
+  height: 100vh;
   margin: 0;
   font-family:'Tajawal', 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

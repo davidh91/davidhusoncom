@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useOutletContext } from "react-router-dom";
 import { WorkContext } from "..";
+import WorksNavbar from "./WorksNavbar";
 
 const Navbar = () => {
   const [selectedWork, setSelectedWork] = useState("");
@@ -20,16 +21,14 @@ const Navbar = () => {
 
   useEffect(() => {
     if (workItem === "music") {
-      console.log("trans to music");
+      console.log("set translation");
       setNavStyle("translate-y-0");
     } else if (workItem === "film") {
       setNavStyle("-translate-y-6");
-      console.log("trans to film");
     } else if (workItem === "other") {
       setNavStyle("-translate-y-12");
-      console.log("trans to other");
     }
-  }, [workItem]);
+  });
 
   return (
     <nav>
@@ -42,31 +41,7 @@ const Navbar = () => {
             Works
           </Link>
           {location.pathname === "/works" ? (
-            <div className="transition-all">
-              <span className="absolute top-[10px] bg-red-700 ml-20 w-[20px] h-0.5 rounded-md tra" />
-              <ul
-                className={`${navStyle} ml-3 absolute left-24 top-0 transition duration-300`}
-              >
-                <li
-                  onClick={() => handelClick("music")}
-                  className="pb-1 hover:text-gray-500 cursor-pointer"
-                >
-                  Music
-                </li>
-                <li
-                  onClick={() => handelClick("film")}
-                  className="pb-1 hover:text-gray-500 cursor-pointer"
-                >
-                  Film
-                </li>
-                <li
-                  onClick={() => handelClick("other")}
-                  className="pb-1 hover:text-gray-500 cursor-pointer"
-                >
-                  Other
-                </li>
-              </ul>
-            </div>
+            <WorksNavbar handelClick={handelClick} navStyle={navStyle} />
           ) : (
             ""
           )}

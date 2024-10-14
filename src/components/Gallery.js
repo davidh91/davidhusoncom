@@ -17,19 +17,18 @@ const Gallery = ({ galleryData }) => {
       checkVisibilty();
     }
     console.log(trigger);
-  }, [trigger]);
+  });
 
   const checkVisibilty = () => {
     if (isVisible(musicElemRef.current)) {
       console.log("music visible");
       setWorkItem("music");
-    }
-    if (isVisible(filmElemRef.current)) {
+    } else if (isVisible(filmElemRef.current)) {
       console.log("film is visible");
       setWorkItem("film");
-    }
-    if (isVisible(otherElemRef.current)) {
+    } else if (isVisible(otherElemRef.current)) {
       console.log("other is visible");
+      console.log(workItem);
       setWorkItem("other");
     }
   };
@@ -39,21 +38,32 @@ const Gallery = ({ galleryData }) => {
   });
 
   return (
-    <div id="gallery-container" className="relative">
+    <div id="gallery-container" className="relative h-full">
       <div>
-        <div ref={musicElemRef} className="sticky top-[2.625rem] float-right">
+        <div
+          ref={musicElemRef}
+          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+        >
           Music
         </div>
-        <div id="music">{data}</div>
+        <div className="flex flex-col w-full items-center" id="music">
+          {data}
+        </div>
       </div>
       <div>
-        <div ref={filmElemRef} className="sticky top-[2.625rem] float-right">
+        <div
+          ref={filmElemRef}
+          className="sticky top-[2.625rem] lg:mr-8 xl:mr-0 float-right"
+        >
           Film
         </div>
         <div id="film">{data}</div>
       </div>
       <div>
-        <div ref={otherElemRef} className="sticky top-[2.625rem] float-right">
+        <div
+          ref={otherElemRef}
+          className="sticky top-[2.625rem] lg:mr-8 xl:mr-0 float-right"
+        >
           Other
         </div>
         <div id="other">{data}</div>
