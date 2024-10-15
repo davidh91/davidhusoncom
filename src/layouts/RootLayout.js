@@ -3,20 +3,16 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { WorkContext } from "..";
 import { TriggerContext } from "..";
+import { debounce } from "../utils/debounce";
 
 const RootLayout = () => {
   const [workItem, setWorkItem] = useState("music");
-  const [trigger, setTrigger] = useState(0);
+  const [trigger, setTrigger] = useState(false);
 
-  const handleScroll = () => {
-    console.log("handle scroll adn send trigger");
-    setTimeout(() => {
-      setTrigger((prev) => prev + 1);
-      if (trigger > 1) {
-        setTrigger(0);
-      }
-    }, 500);
-  };
+  const handleScroll = debounce(() => {
+    console.log("debounce");
+    setTrigger((prev) => !prev);
+  }, 50);
 
   return (
     <WorkContext.Provider value={[workItem, setWorkItem]}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import Card from "./Card";
 import isVisible from "../utils/isVisible";
 import { TriggerContext } from "..";
@@ -12,26 +12,27 @@ const Gallery = ({ galleryData }) => {
   const [workItem, setWorkItem] = useContext(WorkContext);
   const [trigger] = useContext(TriggerContext);
 
-  useEffect(() => {
-    if (trigger > 0) {
-      checkVisibilty();
-    }
-    console.log(trigger);
-  });
-
-  const checkVisibilty = () => {
+  const checkVisibilty = useCallback(() => {
     if (isVisible(musicElemRef.current)) {
       console.log("music visible");
       setWorkItem("music");
-    } else if (isVisible(filmElemRef.current)) {
+    }
+    if (isVisible(filmElemRef.current)) {
       console.log("film is visible");
       setWorkItem("film");
-    } else if (isVisible(otherElemRef.current)) {
+    }
+    if (isVisible(otherElemRef.current)) {
       console.log("other is visible");
-      console.log(workItem);
       setWorkItem("other");
     }
-  };
+  }, [setWorkItem]);
+
+  useEffect(() => {
+    console.log("triggered and check visibilty", trigger);
+    setTimeout(() => {
+      checkVisibilty();
+    });
+  }, [checkVisibilty, trigger]);
 
   const data = galleryData.map((item, i) => {
     return <Card key={i} item={item} />;
@@ -41,6 +42,7 @@ const Gallery = ({ galleryData }) => {
     <div id="gallery-container" className="relative h-full">
       <div>
         <div
+          id="music-label"
           ref={musicElemRef}
           className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
@@ -52,21 +54,27 @@ const Gallery = ({ galleryData }) => {
       </div>
       <div>
         <div
+          id="film-label"
           ref={filmElemRef}
-          className="sticky top-[2.625rem] lg:mr-8 xl:mr-0 float-right"
+          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
           Film
         </div>
-        <div id="film">{data}</div>
+        <div className="flex flex-col w-full items-center" id="film">
+          {data}
+        </div>
       </div>
       <div>
         <div
+          id="other-label"
           ref={otherElemRef}
-          className="sticky top-[2.625rem] lg:mr-8 xl:mr-0 float-right"
+          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
           Other
         </div>
-        <div id="other">{data}</div>
+        <div className="flex flex-col w-full items-center" id="other">
+          {data}
+        </div>
       </div>
     </div>
   );

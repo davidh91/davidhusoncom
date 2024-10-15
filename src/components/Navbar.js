@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { Link, useLocation, useOutletContext } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { WorkContext } from "..";
 import WorksNavbar from "./WorksNavbar";
 
 const Navbar = () => {
-  const [selectedWork, setSelectedWork] = useState("");
   const location = useLocation();
   const [navStyle, setNavStyle] = useState("translate-y-0");
 
@@ -12,10 +11,19 @@ const Navbar = () => {
 
   const handelClick = (item) => {
     setWorkItem(item);
+    console.log("workitem set to", item);
 
     const element = document.getElementById(item);
     if (element !== null) {
       element.scrollIntoView(true, { smooth: true });
+    }
+
+    if (item === "music") {
+      setNavStyle("translate-y-0");
+    } else if (item === "film") {
+      setNavStyle("-translate-y-6");
+    } else if (item === "other") {
+      setNavStyle("-translate-y-12");
     }
   };
 
@@ -28,7 +36,7 @@ const Navbar = () => {
     } else if (workItem === "other") {
       setNavStyle("-translate-y-12");
     }
-  });
+  }, [workItem]);
 
   return (
     <nav>
