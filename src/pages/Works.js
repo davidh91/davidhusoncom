@@ -3,7 +3,7 @@ import Gallery from "../components/Gallery";
 import solea_cover from "../assets/images/solea_cover.jpg";
 import bendit_cover from "../assets/images/letmebend_cover.jpg";
 import elviento_cover from "../assets/images/comoelviento_cover.jpg";
-
+import AnimatedLayout from "../layouts/AnimatedLayout";
 const Works = () => {
   const galleryData = [
     {
@@ -43,7 +43,11 @@ const Works = () => {
     },
   ];
 
-  return <Gallery galleryData={galleryData} />;
+  return (
+    <AnimatedLayout>
+      <Gallery galleryData={galleryData} />
+    </AnimatedLayout>
+  );
 };
 
 export default Works;

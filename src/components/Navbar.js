@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { WorkContext } from "..";
 import WorksNavbar from "./WorksNavbar";
-
 const Navbar = () => {
   const location = useLocation();
-  const [navStyle, setNavStyle] = useState("translate-y-0");
+  const [navStyle, setNavStyle] = useState("");
 
   const [workItem, setWorkItem] = useContext(WorkContext);
 
@@ -19,22 +18,22 @@ const Navbar = () => {
     }
 
     if (item === "music") {
-      setNavStyle("translate-y-0");
+      setNavStyle("translate-y-0 lg:translate-y-0");
     } else if (item === "film") {
-      setNavStyle("-translate-y-6");
+      setNavStyle("lg:-translate-y-6");
     } else if (item === "other") {
-      setNavStyle("-translate-y-12");
+      setNavStyle("lg:-translate-y-12");
     }
   };
 
   useEffect(() => {
     if (workItem === "music") {
       console.log("set translation");
-      setNavStyle("translate-y-0");
+      setNavStyle("translate-x-[2.9rem] lg:translate-y-0 lg:translate-x-0");
     } else if (workItem === "film") {
-      setNavStyle("-translate-y-6");
+      setNavStyle("translate-x-[0.29rem] lg:-translate-y-6 lg:translate-x-0");
     } else if (workItem === "other") {
-      setNavStyle("-translate-y-12");
+      setNavStyle("-translate-x-[2.2rem] lg:-translate-y-12 lg:translate-x-0");
     }
   }, [workItem]);
 

@@ -4,13 +4,13 @@ import Navbar from "../components/Navbar";
 import { WorkContext } from "..";
 import { TriggerContext } from "..";
 import { debounce } from "../utils/debounce";
+import AnimatedOutlet from "./AnimatedOutlet";
 
 const RootLayout = () => {
   const [workItem, setWorkItem] = useState("music");
   const [trigger, setTrigger] = useState(false);
 
   const handleScroll = debounce(() => {
-    console.log("debounce");
     setTrigger((prev) => !prev);
   }, 50);
 
@@ -30,7 +30,7 @@ const RootLayout = () => {
               onScroll={handleScroll}
               className="h-full lg:fixed lg:left-0 m-auto lg:right-0 w-fit overflow-auto 2xl:mt-32 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
             >
-              <Outlet />
+              <AnimatedOutlet />
             </main>
           </div>
         </div>
