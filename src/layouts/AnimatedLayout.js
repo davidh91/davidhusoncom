@@ -1,7 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-// I want a fade in bottom-up - fade out top-down animation
-// so these are my variants
 const variants = {
   hidden: { opacity: 0 },
   enter: { opacity: 1 },
