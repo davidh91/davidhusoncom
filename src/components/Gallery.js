@@ -29,9 +29,7 @@ const Gallery = ({ galleryData }) => {
 
   useEffect(() => {
     console.log("triggered and check visibilty", trigger);
-    setTimeout(() => {
-      checkVisibilty();
-    });
+    checkVisibilty();
   }, [checkVisibilty, trigger]);
 
   const data = galleryData.map((item, i) => {

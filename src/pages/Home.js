@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <AnimatedLayout>
       <img
-        className="mt-32 lg:mt-2 md:max-w-[70%] lg:max-w-[35%] 2xl:max-w-[70%] 2xl:mt-8 mx-auto"
+        className="mt-24 lg:mt-4  3xl:mt-3 md:max-w-[70%] lg:max-w-[50%] 3xl:max-w-[70%] mx-auto"
         src={davidphoto}
         alt="David Huson"
       />

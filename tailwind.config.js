@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         Nunito: ["Nunito Sans", "sans-serif"],
       },
+      screens: {
+        "3xl": "1660px",
+      },
     },
   },
   plugins: [],
