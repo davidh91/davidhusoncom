@@ -4,6 +4,7 @@ import { WorkContext } from "..";
 import { TriggerContext } from "..";
 import { debounce } from "../utils/debounce";
 import AnimatedOutlet from "./AnimatedOutlet";
+import { Link } from "react-router-dom";
 
 const RootLayout = () => {
   const [workItem, setWorkItem] = useState("music");
@@ -20,8 +21,10 @@ const RootLayout = () => {
           <div className="text-center lg:text-start lg:flex h-full overflow-clip lg:overflow-auto">
             <header>
               <div className="pb-12">
-                <h1 className="font-medium text-xl">David Huson</h1>
-                <p className="text-xs"> Flamenco Guitarist & Producer</p>
+                <Link to="/">
+                  <h1 className="font-medium text-xl">David Huson</h1>
+                  <p className="text-xs"> Guitarist & Producer</p>
+                </Link>
               </div>
               <Navbar />
             </header>

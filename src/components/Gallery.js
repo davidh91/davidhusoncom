@@ -28,6 +28,24 @@ const Gallery = ({ galleryData }) => {
     checkVisibilty();
   }, [checkVisibilty, trigger]);
 
+  const musicItems = galleryData
+    .filter((item) => item.type === "music")
+    .map((item, i) => {
+      return <Card key={i} item={item} />;
+    });
+
+  const filmItems = galleryData
+    .filter((item) => item.type === "film")
+    .map((item, i) => {
+      return <Card key={i} item={item} />;
+    });
+
+  const otherItems = galleryData
+    .filter((item) => item.type === "other")
+    .map((item, i) => {
+      return <Card key={i} item={item} />;
+    });
+
   const data = galleryData.map((item, i) => {
     return <Card key={i} item={item} />;
   });
@@ -43,7 +61,7 @@ const Gallery = ({ galleryData }) => {
           Music
         </div>
         <div className="flex flex-col w-full items-center" id="music">
-          {data}
+          {musicItems}
         </div>
       </div>
       <div>
@@ -55,7 +73,7 @@ const Gallery = ({ galleryData }) => {
           Film
         </div>
         <div className="flex flex-col w-full items-center" id="film">
-          {data}
+          {filmItems}
         </div>
       </div>
       <div>
@@ -67,7 +85,10 @@ const Gallery = ({ galleryData }) => {
           Other
         </div>
         <div className="flex flex-col w-full items-center" id="other">
-          {data}
+          {otherItems}
+          <div className="p-0 md:p-12 md:px-24 mb-44 lg:mb-64 flex flex-col gap-2 justify-center snap-start">
+            <div className="w-full mx-auto pb-32"></div>
+          </div>
         </div>
       </div>
     </div>

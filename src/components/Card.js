@@ -14,13 +14,17 @@ const Card = ({ item }) => {
         <p className="font-medium">{item.title}</p>
         <p className="font-light">{item.text}</p>
         <p className="font-light hover:text-gray-500 italic">
-          {item.media === "music" ? (
+          {item.type === "music" ? (
             <a target="_blank" rel="noreferrer" href={item.link}>
               Listen here
             </a>
-          ) : (
+          ) : item.type === "film" ? (
             <a target="blank" rel="noreferrer" href={item.link}>
               Watch here
+            </a>
+          ) : (
+            <a target="blank" rel="noreferrer" href={item.link}>
+              More info
             </a>
           )}
         </p>
