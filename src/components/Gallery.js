@@ -14,21 +14,17 @@ const Gallery = ({ galleryData }) => {
 
   const checkVisibilty = useCallback(() => {
     if (isVisible(musicElemRef.current)) {
-      console.log("music visible");
       setWorkItem("music");
     }
     if (isVisible(filmElemRef.current)) {
-      console.log("film is visible");
       setWorkItem("film");
     }
     if (isVisible(otherElemRef.current)) {
-      console.log("other is visible");
       setWorkItem("other");
     }
   }, [setWorkItem]);
 
   useEffect(() => {
-    console.log("triggered and check visibilty", trigger);
     checkVisibilty();
   }, [checkVisibilty, trigger]);
 

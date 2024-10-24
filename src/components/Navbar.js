@@ -10,7 +10,6 @@ const Navbar = () => {
 
   const handelClick = (item) => {
     setWorkItem(item);
-    console.log("workitem set to", item);
 
     const element = document.getElementById(item);
     if (element !== null) {
@@ -28,7 +27,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (workItem === "music") {
-      console.log("set translation");
       setNavStyle("translate-x-[2.9rem] lg:translate-y-0 lg:translate-x-0");
     } else if (workItem === "film") {
       setNavStyle("translate-x-[0.29rem] lg:-translate-y-6 lg:translate-x-0");
