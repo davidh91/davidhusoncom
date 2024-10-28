@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/davidhusoncom/static/css/main.13b738be.css",
-    "main.js": "/davidhusoncom/static/js/main.fb0523d3.js",
-    "static/media/videoheader.webm": "/davidhusoncom/static/media/videoheader.4873f207ce8ffcba9b7a.webm",
-    "static/media/sunrise_cover.jpg": "/davidhusoncom/static/media/sunrise_cover.f9ec02473e5681cb6ed4.jpg",
-    "static/media/solea_cover.jpg": "/davidhusoncom/static/media/solea_cover.b84ceb39f81eff52660a.jpg",
-    "static/media/david.jpg": "/davidhusoncom/static/media/david.6119312e5f9f0ad517f9.jpg",
-    "static/media/letmebend_cover.jpg": "/davidhusoncom/static/media/letmebend_cover.70293bca6ed44ae9b95b.jpg",
-    "static/media/videothumb.jpg": "/davidhusoncom/static/media/videothumb.dd44b0f9d2eac58291c4.jpg",
-    "static/media/alamillo_cover.jpg": "/davidhusoncom/static/media/alamillo_cover.63d290ccf4488ad7dc51.jpg",
-    "static/media/comovideo_cover.jpg": "/davidhusoncom/static/media/comovideo_cover.714d5acbc00d65b38bfb.jpg",
-    "static/media/comoelviento_cover.jpg": "/davidhusoncom/static/media/comoelviento_cover.6e92f7db6db88419f32d.jpg",
-    "static/media/oasis_cover.jpg": "/davidhusoncom/static/media/oasis_cover.7d5c5960da6fb74fb520.jpg",
-    "static/media/changes_cover.jpg": "/davidhusoncom/static/media/changes_cover.fbb210c5828586f4fe14.jpg",
-    "static/media/osa_cover.jpg": "/davidhusoncom/static/media/osa_cover.13f3563725efe6b6ff10.jpg",
-    "index.html": "/davidhusoncom/index.html",
-    "static/media/loader.svg": "/davidhusoncom/static/media/loader.26b55de866a612174ce7095df717a2a5.svg",
-    "main.13b738be.css.map": "/davidhusoncom/static/css/main.13b738be.css.map",
-    "main.fb0523d3.js.map": "/davidhusoncom/static/js/main.fb0523d3.js.map"
+    "main.css": "https://davidh91.github.io/davidhusoncom/static/css/main.13b738be.css",
+    "main.js": "https://davidh91.github.io/davidhusoncom/static/js/main.46250ac8.js",
+    "static/media/videoheader.webm": "https://davidh91.github.io/davidhusoncom/static/media/videoheader.4873f207ce8ffcba9b7a.webm",
+    "static/media/sunrise_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/sunrise_cover.f9ec02473e5681cb6ed4.jpg",
+    "static/media/solea_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/solea_cover.b84ceb39f81eff52660a.jpg",
+    "static/media/david.jpg": "https://davidh91.github.io/davidhusoncom/static/media/david.6119312e5f9f0ad517f9.jpg",
+    "static/media/letmebend_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/letmebend_cover.70293bca6ed44ae9b95b.jpg",
+    "static/media/videothumb.jpg": "https://davidh91.github.io/davidhusoncom/static/media/videothumb.dd44b0f9d2eac58291c4.jpg",
+    "static/media/alamillo_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/alamillo_cover.63d290ccf4488ad7dc51.jpg",
+    "static/media/comovideo_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/comovideo_cover.714d5acbc00d65b38bfb.jpg",
+    "static/media/comoelviento_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/comoelviento_cover.6e92f7db6db88419f32d.jpg",
+    "static/media/oasis_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/oasis_cover.7d5c5960da6fb74fb520.jpg",
+    "static/media/changes_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/changes_cover.fbb210c5828586f4fe14.jpg",
+    "static/media/osa_cover.jpg": "https://davidh91.github.io/davidhusoncom/static/media/osa_cover.13f3563725efe6b6ff10.jpg",
+    "index.html": "https://davidh91.github.io/davidhusoncom/index.html",
+    "static/media/loader.svg": "https://davidh91.github.io/davidhusoncom/static/media/loader.26b55de866a612174ce7095df717a2a5.svg",
+    "main.13b738be.css.map": "https://davidh91.github.io/davidhusoncom/static/css/main.13b738be.css.map",
+    "main.46250ac8.js.map": "https://davidh91.github.io/davidhusoncom/static/js/main.46250ac8.js.map"
   },
   "entrypoints": [
     "static/css/main.13b738be.css",
-    "static/js/main.fb0523d3.js"
+    "static/js/main.46250ac8.js"
   ]
 }
