@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/davidhusoncom/static/css/main.ed1775f1.css",
-    "main.js": "/davidhusoncom/static/js/main.5d4fbbe6.js",
+    "main.js": "/davidhusoncom/static/js/main.e1006730.js",
     "static/media/videoheader.webm": "/davidhusoncom/static/media/videoheader.4873f207ce8ffcba9b7a.webm",
     "static/media/sunrise_cover.jpg": "/davidhusoncom/static/media/sunrise_cover.f9ec02473e5681cb6ed4.jpg",
     "static/media/solea_cover.jpg": "/davidhusoncom/static/media/solea_cover.b84ceb39f81eff52660a.jpg",
@@ -17,10 +17,10 @@
     "index.html": "/davidhusoncom/index.html",
     "static/media/loader.svg": "/davidhusoncom/static/media/loader.26b55de866a612174ce7095df717a2a5.svg",
     "main.ed1775f1.css.map": "/davidhusoncom/static/css/main.ed1775f1.css.map",
-    "main.5d4fbbe6.js.map": "/davidhusoncom/static/js/main.5d4fbbe6.js.map"
+    "main.e1006730.js.map": "/davidhusoncom/static/js/main.e1006730.js.map"
   },
   "entrypoints": [
     "static/css/main.ed1775f1.css",
-    "static/js/main.5d4fbbe6.js"
+    "static/js/main.e1006730.js"
   ]
 }
