@@ -32,7 +32,7 @@ const RootLayout = () => {
             </header>
             <main
               onScroll={handleScroll}
-              className="z-0 h-full w-full lg:w-full lg:fixed lg:left-0 m-auto lg:right-0 overflow-auto lg:mt-24 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
+              className="z-0 h-full w-full lg:w-full lg:fixed lg:left-0 m-auto lg:right-0 overflow-auto lg:mt-4 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
             >
               <AnimatedOutlet />
             </main>
