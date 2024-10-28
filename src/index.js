@@ -14,7 +14,7 @@ export const TriggerContext = createContext();
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
+    <BrowserRouter basename="/davidhusoncom">
       <Routes>
         <Route path="" element={<RootLayout />}>
           <Route index element={<Home />} />
