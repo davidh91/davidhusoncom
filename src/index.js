@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<RootLayout />}>
+        <Route path="" element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/works" element={<Works />} />
           <Route path="/contact" element={<Contact />} />
