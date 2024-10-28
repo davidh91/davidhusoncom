@@ -5,7 +5,7 @@ import ContactForm from "../components/ContactForm";
 const Contact = () => {
   return (
     <AnimatedLayout>
-      <div className="w-96 mb-32">
+      <div className="lg:w-full px-8 o mb-32">
         <ContactForm />
       </div>
     </AnimatedLayout>

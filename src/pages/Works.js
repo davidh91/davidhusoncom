@@ -36,7 +36,7 @@ const Works = () => {
     },
     {
       title: "Alamillo (2024)",
-      text: "Flamenco jazz drill project feat. Antonio Moreno Glazkov",
+      text: "Single",
       image: alamillo_cover,
       type: "music",
       link: "https://open.spotify.com/track/47nSmzwm5M3KOkF5i9zeKd?si=8ad65e56c9044994",

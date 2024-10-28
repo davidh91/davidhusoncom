@@ -46,17 +46,13 @@ const Gallery = ({ galleryData }) => {
       return <Card key={i} item={item} />;
     });
 
-  const data = galleryData.map((item, i) => {
-    return <Card key={i} item={item} />;
-  });
-
   return (
     <div id="gallery-container" className="relative h-full">
       <div>
         <div
           id="music-label"
           ref={musicElemRef}
-          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
           Music
         </div>
@@ -68,7 +64,7 @@ const Gallery = ({ galleryData }) => {
         <div
           id="film-label"
           ref={filmElemRef}
-          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
           Film
         </div>
@@ -80,7 +76,7 @@ const Gallery = ({ galleryData }) => {
         <div
           id="other-label"
           ref={otherElemRef}
-          className="sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
         >
           Other
         </div>

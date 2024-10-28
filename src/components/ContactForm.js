@@ -68,7 +68,7 @@ const ContactForm = () => {
             type="submit"
           >
             {loading ? (
-              <img className="h-6 fit w-full" src={loader} alt="loader" />
+              <img className="h-6 w-full" src={loader} alt="loader" />
             ) : (
               "Send"
             )}
@@ -79,8 +79,9 @@ const ContactForm = () => {
             </p>
           )}
           <ReCAPTCHA
+            style={{ transform: "scale(0.70)", transformOrigin: "0 0" }}
             ref={recaptcha}
-            className="my-2 border-2"
+            className="my-2 border-2 max-w-3"
             sitekey={process.env.REACT_APP_SITE_KEY}
           />
         </form>

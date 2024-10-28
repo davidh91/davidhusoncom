@@ -17,12 +17,14 @@ const RootLayout = () => {
   return (
     <WorkContext.Provider value={[workItem, setWorkItem]}>
       <TriggerContext.Provider value={[trigger, setTrigger]}>
-        <div className="container mx-auto px-16 pt-16 h-full">
-          <div className="text-center lg:text-start lg:flex h-full overflow-clip lg:overflow-auto">
+        <div className="container mx-auto px-4 lg:px-16 pt-16 h-full">
+          <div className="text-center lg:text-start lg:flex h-full overflow-clip overflow-x-visible lg:overflow-auto">
             <header>
               <div className="pb-12">
                 <Link to="/">
-                  <h1 className="font-medium text-xl">David Huson</h1>
+                  <h1 className="font-medium text-xl mb-[0.3rem]">
+                    David Huson
+                  </h1>
                   <p className="text-xs"> Guitarist & Producer</p>
                 </Link>
               </div>
@@ -30,10 +32,13 @@ const RootLayout = () => {
             </header>
             <main
               onScroll={handleScroll}
-              className="h-full lg:fixed lg:left-0 m-auto lg:right-0 w-fit overflow-auto lg:mt-24 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
+              className="h-full w-full lg:w-1/3 lg:fixed lg:left-0 m-auto lg:right-0 overflow-auto lg:mt-24 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
             >
               <AnimatedOutlet />
             </main>
+            <div className="text-[0.7rem] absolute bottom-0 right-0 p-4 text-[#c2c2c2b9] hover:text-[#595959]">
+              © David Huson 2024
+            </div>
           </div>
         </div>
       </TriggerContext.Provider>

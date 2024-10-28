@@ -27,21 +27,21 @@ const Navbar = () => {
 
   useEffect(() => {
     if (workItem === "music") {
-      setNavStyle("translate-x-[2.9rem] lg:translate-y-0 lg:translate-x-0");
+      setNavStyle("translate-x-[33%] lg:translate-y-0 lg:translate-x-0");
     } else if (workItem === "film") {
-      setNavStyle("translate-x-[0.29rem] lg:-translate-y-6 lg:translate-x-0");
+      setNavStyle("translate-x-[0%] lg:-translate-y-6 lg:translate-x-0");
     } else if (workItem === "other") {
-      setNavStyle("-translate-x-[2.2rem] lg:-translate-y-12 lg:translate-x-0");
+      setNavStyle("-translate-x-[33%] lg:-translate-y-12 lg:translate-x-0");
     }
   }, [workItem]);
 
   return (
     <nav>
-      <ul className="flex justify-center lg:text-start lg:block gap-8 text-sm">
-        <li className="hover:text-gray-500 pb-1">
+      <ul className="flex justify-center lg:text-start lg:block lg:gap-8 text-sm">
+        <li className="hover:text-gray-500 pb-1 w-1/3">
           <Link to="/">Home</Link>
         </li>
-        <li className=" pb-1 relative">
+        <li className="pb-1 relative w-1/3">
           <Link className="hover:text-gray-500" to="/works">
             Works
           </Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
             ""
           )}
         </li>
-        <li className="hover:text-gray-500 pb-1">
+        <li className="hover:text-gray-500 pb-1 w-1/3">
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
