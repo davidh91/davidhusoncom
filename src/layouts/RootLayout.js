@@ -19,7 +19,7 @@ const RootLayout = () => {
       <TriggerContext.Provider value={[trigger, setTrigger]}>
         <div className="container mx-auto px-4 lg:px-16 pt-16 h-full">
           <div className="text-center lg:text-start lg:flex h-full overflow-clip overflow-x-visible lg:overflow-auto">
-            <header>
+            <header className="z-10">
               <div className="pb-12">
                 <Link to="/">
                   <h1 className="font-medium text-xl mb-[0.3rem]">
@@ -32,7 +32,7 @@ const RootLayout = () => {
             </header>
             <main
               onScroll={handleScroll}
-              className="h-full w-full lg:w-1/3 lg:fixed lg:left-0 m-auto lg:right-0 overflow-auto lg:mt-24 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
+              className="z-0 h-full w-full lg:w-full lg:fixed lg:left-0 m-auto lg:right-0 overflow-auto lg:mt-24 scroll-smooth hide-scrollbar snap-y snap-always snap-mandatory"
             >
               <AnimatedOutlet />
             </main>

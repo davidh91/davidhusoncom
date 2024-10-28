@@ -52,7 +52,7 @@ const Gallery = ({ galleryData }) => {
         <div
           id="music-label"
           ref={musicElemRef}
-          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] w-fit left-1/2 translate-x-[18vw] xl:translate-x-[14vw]  2xl:translate-x-[12vw]"
         >
           Music
         </div>
@@ -64,7 +64,7 @@ const Gallery = ({ galleryData }) => {
         <div
           id="film-label"
           ref={filmElemRef}
-          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] w-fit left-1/2 translate-x-[18vw] xl:translate-x-[14vw]  2xl:translate-x-[12vw]"
         >
           Film
         </div>
@@ -76,7 +76,7 @@ const Gallery = ({ galleryData }) => {
         <div
           id="other-label"
           ref={otherElemRef}
-          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] lg:mr-12 2xl:mr-6 float-right"
+          className="opacity-0 lg:opacity-100 sticky top-[2.625rem] w-fit left-1/2 translate-x-[18vw] xl:translate-x-[14vw]  2xl:translate-x-[12vw]"
         >
           Other
         </div>

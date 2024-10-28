@@ -13,7 +13,7 @@ const Home = () => {
         alt="David Huson"
       /> */}
       <video
-        className="mt-24 lg:mt-32 md:max-w-[70%] lg:max-w-[70%] 3xl:max-w-[60%] mx-auto"
+        className="mt-24 lg:mt-32 md:max-w-[70%] lg:max-w-[30%] 3xl:max-w-[20%] mx-auto"
         autoPlay
         loop
         poster={videoThumb}
