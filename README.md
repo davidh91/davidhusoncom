@@ -64,16 +64,49 @@ file. Without it the build inlines a `<script>` block, which the policy blocks.
 Safe transitive versions are pinned through the `overrides` block in
 `package.json`.
 
-Two advisories remain, both in packages that `react-scripts@5.0.1` pins to
-incompatible major versions:
+### webpack-dev-server: accepted risk
 
-- `svgo@1.3.2` (through `@svgr/webpack`) - runs at build time only.
-- `webpack-dev-server@4` - runs during `npm start` only.
+Six advisories remain, all for `webpack-dev-server@4`. They are dismissed in
+Dependabot on purpose. Read this before you re-open them.
 
-Neither package ships to the browser, so neither affects a visitor to the site.
-`npm audit fix --force` does not help: it replaces `react-scripts` with version
-`0.0.0` and breaks the build. Clearing these two requires moving off Create
-React App, which Meta no longer maintains. Vite is the usual replacement.
+`react-scripts@5.0.1` pins `webpack-dev-server` to version 4. Version 5 removed
+the `onBeforeSetupMiddleware`, `onAfterSetupMiddleware` and `https` options that
+`react-scripts` still passes, so an override to version 5 stops `npm start` from
+booting with:
 
-Do not run `npm start` and browse untrusted sites in the same session, until
-that migration happens.
+```
+Invalid options object. Dev Server has been initialized using an options object
+that does not match the API schema.
+ - options has an unknown property 'onAfterSetupMiddleware'.
+```
+
+`webpack-dev-server` runs during `npm start` only. `npm run build` never loads
+it, and it never ships to the browser, so no visitor to the site is exposed.
+
+Dismiss these alerts in GitHub under **Security -> Dependabot alerts**, with the
+reason **Risk is tolerable to this project**, and this note:
+
+> Development-only dependency. Pinned by react-scripts@5.0.1, which passes
+> options that webpack-dev-server 5 removed. Not present in the production
+> build. Will be resolved by migrating off Create React App.
+
+The residual risk falls on whoever runs `npm start`. Do not run `npm start` and
+browse untrusted sites in the same session.
+
+Migrating off Create React App, which Meta no longer maintains, removes
+`webpack-dev-server` along with most of the toolchain. Vite is the usual
+replacement. That is the permanent fix.
+
+### Do not regenerate the lock file from scratch
+
+Run `npm install` to add or change a dependency. Never delete
+`package-lock.json` and rebuild it.
+
+Every range in `package.json` uses `^`, so a full re-resolution drifts. One such
+rebuild pulled in a new `typescript` major, which made
+`eslint-config-react-app` switch to its TypeScript path and fail the build with
+`Environment key "jest/globals" is unknown`. The committed lock is the verified
+state. Keep it, and let `npm install` change only what it must.
+
+Removing an entry from `overrides` also needs care. npm leaves the old pin in
+the lock, so check the resolved version afterwards.
