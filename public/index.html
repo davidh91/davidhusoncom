@@ -3,6 +3,37 @@
 
 <head>
   <meta charset="utf-8" />
+
+  <!--
+      Security headers. This site is served as static files (GitHub Pages), so
+      it cannot set real HTTP response headers. These meta equivalents are the
+      next best thing.
+
+      The Content-Security-Policy allow-list covers exactly what the site uses:
+        - Google Fonts stylesheets and font files
+        - reCAPTCHA v2 (script, iframe and images)
+        - the EmailJS send endpoint (contact form)
+      'unsafe-inline' is required for style-src only, because Framer Motion and
+      reCAPTCHA both set inline styles. Scripts need no inline allowance: the
+      build sets INLINE_RUNTIME_CHUNK=false so the webpack runtime stays in an
+      external file.
+    -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+      script-src 'self' https://www.google.com https://www.gstatic.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https://www.gstatic.com;
+      media-src 'self';
+      connect-src 'self' https://api.emailjs.com;
+      frame-src https://www.google.com;
+      worker-src 'self';
+      manifest-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

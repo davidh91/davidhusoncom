@@ -15,15 +15,15 @@ const Card = ({ item }) => {
         <p className="font-light">{item.text}</p>
         <p className="font-light hover:text-gray-500 italic">
           {item.type === "music" ? (
-            <a target="_blank" rel="noreferrer" href={item.link}>
+            <a target="_blank" rel="noopener noreferrer" href={item.link}>
               Listen here
             </a>
           ) : item.type === "film" ? (
-            <a target="blank" rel="noreferrer" href={item.link}>
+            <a target="_blank" rel="noopener noreferrer" href={item.link}>
               Watch here
             </a>
           ) : (
-            <a target="blank" rel="noreferrer" href={item.link}>
+            <a target="_blank" rel="noopener noreferrer" href={item.link}>
               More info
             </a>
           )}
