@@ -14,9 +14,9 @@ npm start
 
 ## Security
 
-### The `REACT_APP_*` values are public, not secret
+### The `VITE_*` values are public, not secret
 
-Create React App inlines every `REACT_APP_*` variable into the JavaScript
+Vite inlines every `VITE_*` variable into the JavaScript
 bundle at build time. Anyone who loads the site can read them. The EmailJS
 service ID, template ID and public key, and the reCAPTCHA site key, are all
 public identifiers by design.
@@ -47,66 +47,28 @@ appear in this repository.
 ### Content-Security-Policy
 
 GitHub Pages serves static files and cannot set HTTP response headers, so
-`public/index.html` carries the policy in a `<meta http-equiv>` tag. The
+`index.html` carries the policy in a `<meta http-equiv>` tag. The
 allow-list is deliberately narrow: Google Fonts, reCAPTCHA and the EmailJS
 send endpoint.
 
 If you add a third-party script, embed or API call, extend the policy in
-`public/index.html`. Otherwise the browser blocks the request. Check the
+`index.html`. Otherwise the browser blocks the request. Check the
 browser console for `Content Security Policy` errors after any such change.
 
-`INLINE_RUNTIME_CHUNK=false` in `.env` keeps the webpack runtime in an external
-file. Without it the build inlines a `<script>` block, which the policy blocks.
+The Vite production build emits only external module scripts, so the policy
+needs no inline script allowance. The dev server injects inline scripts for
+React Fast Refresh, so `vite.config.js` removes the policy during `npm start`
+only. Run `npm run build && npm run preview` to test the policy locally.
 
 ### Dependencies
 
-`npm audit` reports on the build toolchain that `react-scripts@5.0.1` pins.
-Safe transitive versions are pinned through the `overrides` block in
-`package.json`.
+`package.json` pins `postcss-selector-parser` to version 7 through `overrides`.
+Tailwind 3 depends on version 6, which has no patched release. The build output
+is the same with version 7.
 
-### webpack-dev-server: accepted risk
+### braces: accepted risk
 
-Six advisories remain, all for `webpack-dev-server@4`. They are dismissed in
-Dependabot on purpose. Read this before you re-open them.
-
-`react-scripts@5.0.1` pins `webpack-dev-server` to version 4. Version 5 removed
-the `onBeforeSetupMiddleware`, `onAfterSetupMiddleware` and `https` options that
-`react-scripts` still passes, so an override to version 5 stops `npm start` from
-booting with:
-
-```
-Invalid options object. Dev Server has been initialized using an options object
-that does not match the API schema.
- - options has an unknown property 'onAfterSetupMiddleware'.
-```
-
-`webpack-dev-server` runs during `npm start` only. `npm run build` never loads
-it, and it never ships to the browser, so no visitor to the site is exposed.
-
-Dismiss these alerts in GitHub under **Security -> Dependabot alerts**, with the
-reason **Risk is tolerable to this project**, and this note:
-
-> Development-only dependency. Pinned by react-scripts@5.0.1, which passes
-> options that webpack-dev-server 5 removed. Not present in the production
-> build. Will be resolved by migrating off Create React App.
-
-The residual risk falls on whoever runs `npm start`. Do not run `npm start` and
-browse untrusted sites in the same session.
-
-Migrating off Create React App, which Meta no longer maintains, removes
-`webpack-dev-server` along with most of the toolchain. Vite is the usual
-replacement. That is the permanent fix.
-
-### Do not regenerate the lock file from scratch
-
-Run `npm install` to add or change a dependency. Never delete
-`package-lock.json` and rebuild it.
-
-Every range in `package.json` uses `^`, so a full re-resolution drifts. One such
-rebuild pulled in a new `typescript` major, which made
-`eslint-config-react-app` switch to its TypeScript path and fail the build with
-`Environment key "jest/globals" is unknown`. The committed lock is the verified
-state. Keep it, and let `npm install` change only what it must.
-
-Removing an entry from `overrides` also needs care. npm leaves the old pin in
-the lock, so check the resolved version afterwards.
+`braces` has an open advisory with no patched release. Tailwind 3 and
+`gh-pages` both depend on it through `micromatch`. Both run on the developer
+machine only and never ship to the browser. Dismiss the alert in Dependabot
+with the reason **No fix available** until a patched release exists.
