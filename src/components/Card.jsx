@@ -3,7 +3,7 @@ import React from "react";
 const Card = ({ item }) => {
   return (
     <div className="p-0 md:p-12 md:px-24 mb-44 lg:mb-64 flex flex-col gap-2 justify-center snap-start">
-      <div className="w-full mx-auto pb-[2.625rem]">
+      <div className="w-full mx-auto pb-10.5">
         <img
           className="lg:max-w-[18rem] 2xl:max-w-xs"
           src={item.image}
