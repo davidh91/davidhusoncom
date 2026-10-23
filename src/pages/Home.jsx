@@ -15,6 +15,8 @@ const Home = () => {
       <video
         className="mt-24 lg:mt-32 md:max-w-[70%] lg:max-w-[30%] 3xl:max-w-[20%] mx-auto"
         autoPlay
+        muted
+        playsInline
         loop
         poster={videoThumb}
       >
