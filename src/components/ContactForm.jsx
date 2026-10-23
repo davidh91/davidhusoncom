@@ -70,7 +70,7 @@ const ContactForm = () => {
         >
           <label htmlFor="user_name">Name</label>
           <input
-            className="rounded-md p-1 px-2"
+            className="rounded-md p-1 px-2 bg-white"
             type="text"
             id="user_name"
             name="user_name"
@@ -82,7 +82,7 @@ const ContactForm = () => {
             Email
           </label>
           <input
-            className="rounded-md p-1 px-2"
+            className="rounded-md p-1 px-2 bg-white"
             type="email"
             id="user_email"
             name="user_email"
@@ -94,7 +94,7 @@ const ContactForm = () => {
             Message
           </label>
           <textarea
-            className="rounded-md p-1 px-2 h-36"
+            className="rounded-md p-1 px-2 h-36 bg-white"
             id="message"
             name="message"
             maxLength={MAX_MESSAGE_LENGTH}
