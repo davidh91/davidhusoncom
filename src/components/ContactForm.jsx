@@ -35,11 +35,11 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
         form.current,
         {
-          publicKey: process.env.REACT_APP_PUBLIC_KEY,
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
         }
       )
       .then(
@@ -125,7 +125,7 @@ const ContactForm = () => {
             style={{ transform: "scale(0.70)", transformOrigin: "0 0" }}
             ref={recaptcha}
             className="my-2 border-2 max-w-3"
-            sitekey={process.env.REACT_APP_SITE_KEY}
+            sitekey={import.meta.env.VITE_SITE_KEY}
           />
         </form>
       )}
