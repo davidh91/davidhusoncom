@@ -14,7 +14,7 @@ export const TriggerContext = createContext();
 
 root.render(
   <React.StrictMode>
-    {/* Make sure basename matches your github repo to work with gh-pages */}
+    {/* Make sure basename matches your github repo to work with GitHub Pages */}
     <BrowserRouter>
       <Routes>
         <Route path="" element={<RootLayout />}>

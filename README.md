@@ -12,6 +12,16 @@ npm start
 
 `.env` is git-ignored. Never commit it.
 
+## Deployment
+
+`.github/workflows/deploy.yml` builds the site and deploys it to GitHub Pages
+on each push to `master`. You can also start it by hand from the **Actions**
+tab.
+
+The workflow reads the `VITE_*` values from repository secrets. Add them under
+**Settings -> Secrets and variables -> Actions**, with the same names as in
+`.env.example`. Set **Settings -> Pages -> Source** to **GitHub Actions**.
+
 ## Security
 
 ### The `VITE_*` values are public, not secret
@@ -59,16 +69,3 @@ The Vite production build emits only external module scripts, so the policy
 needs no inline script allowance. The dev server injects inline scripts for
 React Fast Refresh, so `vite.config.js` removes the policy during `npm start`
 only. Run `npm run build && npm run preview` to test the policy locally.
-
-### Dependencies
-
-`package.json` pins `postcss-selector-parser` to version 7 through `overrides`.
-Tailwind 3 depends on version 6, which has no patched release. The build output
-is the same with version 7.
-
-### braces: accepted risk
-
-`braces` has an open advisory with no patched release. Tailwind 3 and
-`gh-pages` both depend on it through `micromatch`. Both run on the developer
-machine only and never ship to the browser. Dismiss the alert in Dependabot
-with the reason **No fix available** until a patched release exists.

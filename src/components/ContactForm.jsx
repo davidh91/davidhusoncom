@@ -101,7 +101,7 @@ const ContactForm = () => {
             required
           />
           <button
-            className="p-2 mt-4 text-white bg-slate-600 rounded-md hover:bg-slate-400 disabled:bg-slate-400"
+            className="p-2 mt-4 text-white bg-slate-600 rounded-md cursor-pointer hover:bg-slate-400 disabled:bg-slate-400 disabled:cursor-default"
             type="submit"
             disabled={loading}
           >

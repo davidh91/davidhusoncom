@@ -31,7 +31,7 @@ const Navbar = () => {
     } else if (workItem === "film") {
       setNavStyle("translate-x-[0%] lg:-translate-y-6 lg:translate-x-0");
     } else if (workItem === "other") {
-      setNavStyle("-translate-x-[33%] lg:-translate-y-12 lg:translate-x-0");
+      setNavStyle("translate-x-[-33%] lg:-translate-y-12 lg:translate-x-0");
     }
   }, [workItem]);
 

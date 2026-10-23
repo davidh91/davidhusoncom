@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 // The dev server injects inline scripts (React Fast Refresh, HMR client) that
 // the Content-Security-Policy in index.html blocks. Drop the policy in dev only.
@@ -12,7 +13,7 @@ const stripCspInDev = {
 };
 
 export default defineConfig({
-  plugins: [react(), stripCspInDev],
+  plugins: [react(), tailwindcss(), stripCspInDev],
   build: {
     outDir: "build",
   },
