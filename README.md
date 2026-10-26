@@ -15,7 +15,7 @@ npm start
 ## Deployment
 
 `.github/workflows/deploy.yml` builds the site and deploys it to GitHub Pages
-on each push to `master`. You can also start it by hand from the **Actions**
+on each push to `main`. You can also start it by hand from the **Actions**
 tab.
 
 The workflow reads the `VITE_*` values from repository secrets. Add them under
